@@ -23,7 +23,7 @@ public class Apicontroller {
    public static void main(String[] args) throws SQLException{
     //userdbmodel conn=new userdbmodel();
     user b=user.returnuser();
-    b.register(3,"g","g", "g", "g", "g");
+    b.register("g","g", "g", "g", "g");
    
    
    }
