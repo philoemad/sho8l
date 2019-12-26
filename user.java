@@ -15,6 +15,7 @@ public class user extends userdbmodel {
 
   private static user users;
   private String username;
+  private String name;
   private String password;
   private String country;
   private String gender;
@@ -34,10 +35,11 @@ public class user extends userdbmodel {
 
   public void register(String name, String username, String password, String gender, String country)
       throws SQLException {
-    this.username = usernames;
-    this.password = passwords;
-    this.gender = genders;
-    this.country = countrys;
+    this.username = username;
+    this.name = name;
+    this.password = password;
+    this.gender = gender;
+    this.country = country;
     userdbmodel regist = new userdbmodel();
     regist.save(name, username, password, gender, country);
 
