@@ -1,0 +1,6 @@
+I've added the functions I believe are necessary for Adding Friends in userdbmodel,
+but I haven't added direct access to it because honestly I still don't quite get the structure of the program that's in your mind
+or like what gets instantiated, I kinda feel like things aren't where they should be and they're not used correctly,
+so I'll leave it to you to put the functions to use to because maybe I'm the one who's in the wrong.
+Last thing I added the login function in userdbmodel and removed the id from the logic of the program
+because it was redundant and just confusing so just drop it from the database on your end
