@@ -21,9 +21,12 @@ public class Apicontroller {
   
 
    public static void main(String[] args) throws SQLException{
-    //userdbmodel conn=new userdbmodel();
-    user b=user.returnuser();
-    b.register("g","g", "g", "g", "g");
+     //userdbmodel conn=new userdbmodel();
+    usercontroller b=usercontroller.returnuser();
+   b= b.login("g","g");
+  
+//closedgroup creategroup;
+//creategroup.AddMember(null, null);
    
    
    }
