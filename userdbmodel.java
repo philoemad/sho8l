@@ -31,18 +31,19 @@ public class userdbmodel {
 
    }
 
-   public void save(String name, String username, String password, String gender, String country) throws SQLException {
-      PreparedStatement c = connection.prepareStatement("Insert into user values(?,?,?,?,?)");
-
-      c.setString(1, name);
-      c.setString(2, username);
-      c.setString(3, password);
-      c.setString(4, gender);
-      c.setString(5, country);
-      int i = c.executeUpdate();
-      System.out.print("record inserted" + i);
-
-   }
+    public void save(int id,String names,String usernames,String passwords,String genders, String countrys) throws SQLException{
+        PreparedStatement c=connection.prepareStatement("Insert into user values(?,?,?,?,?,?)");
+      
+        c.setInt(1, id);
+        c.setString(2, names);
+        c.setString(3, usernames);
+        c.setString(4,passwords);
+         c.setString(5,genders);
+          c.setString(6,countrys);
+        int i=c.executeUpdate();
+        System.out.print("record inserted"+i);
+    
+    }
    public void login(String name, String password) throws SQLException {
       PreparedStatement c = connection.prepareStatement("SELECT * from user WHERE username = ? and password = ?)");
 
@@ -141,5 +142,34 @@ public class userdbmodel {
       return users;
 
    }
+
+
+////////////////login///////////////////////////////
+ public  usercontroller validatelogin(String name,String pass) throws SQLException{
+         resultSet=statement.executeQuery("SELECT * FROM user where username='"+name+"'and password='"+pass+"'");
+  usercontroller data=usercontroller.returnuser();
+ int count=0;
+         while(resultSet.next()){
+            
+          data.id =resultSet.getInt(1);
+          data.name= resultSet.getString(2);
+           data.username= resultSet.getString(3);
+           data.password= resultSet.getString(4);
+           data.gender= resultSet.getString(5);
+            data.country=resultSet.getString(6);
+            System.out.print("loged succes");
+            
+            count++;
+             
+        
+        
+    
+    }if(count==0){
+          System.out.print("loged failed");}
+         return data;
+    
+    
+    
+}
 
 }
