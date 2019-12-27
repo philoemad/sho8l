@@ -5,7 +5,10 @@
  */
 package apicontroller;
 import user.userdbmodel;
-import user.user;
+import user.usercontroller;
+import group.closedgroup;
+import group.opengroup;
+import chat.groupchat;
 /**
  *
  * @author philo
@@ -21,13 +24,13 @@ public class Apicontroller {
   
 
    public static void main(String[] args) throws SQLException{
-     //userdbmodel conn=new userdbmodel();
+       
+    //userdbmodel conn=new userdbmodel();
     usercontroller b=usercontroller.returnuser();
    b= b.login("g","g");
   
 //closedgroup creategroup;
 //creategroup.AddMember(null, null);
-   
    
    }
 }
